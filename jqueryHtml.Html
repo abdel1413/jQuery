@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>bootstrap</title>
+    
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script>
+     
+    // All jquery function start with a bling/dollar sign ($)
+   
+    $(document).ready(function () {
+        //$("button").addClass('animate__animated animate__bounce')
+    
+        $(".well").addClass("animated animate__shake")
+        $("#target3").addClass("animate__animated animate__fadeOut")
+
+        //add btn-primary to target1 
+        $("button").addClass("animate_animated")
+        $(".btn").addClass(" animate__animated animate__shake")
+        $("#target1").addClass("btn-primary")
+        //remove class
+        $("#target4").removeClass("btn-default")
+
+        //change color using css function
+        $("#target5").css("background","blue")
+        $("#target5").css('color',"white")
+        $("#target5").css("border-radius",30)
+        $("#target5").css("border-color","red")
+
+        //Using  funct prop() to disable an element
+        $("#target6").prop("disabled", true)
+       
+        //using html() funct to change the HTML tage//
+        //eg: emphasize target4
+        $("#target2").html("<em>#target2</em>")
+
+        //using text() func to change only 
+        $("#target1").text("Changed1")
+        
+        //Using remove() func to remove the entire element
+        $("#target6").remove()
+        
+        //Using appendTo()func to move an element
+        $("#target2").appendTo("#right-well")
+
+        // clone and append an element
+        $("#target5").clone().appendTo("#left-well")
+        
+        //Using parent() to access and modify parent property
+        $("#left-well").parent().css("background", 'yellow')
+
+        //Using children() func to access children
+        $("#left-well").children().css("color",'orange')
+
+        // Using element:nth-child(n) to access specific child n
+        $(".target:nth-child(1)").addClass(" animate__bounce")
+
+        // Using target:odd/even funct to access either odd or even element
+        //(note it is zero based indexing)
+        $(".target:odd").addClass(" animate__animated animate__bounce")
+        $(".target:even").addClass(" animate__animated animate__bounce")
+
+        //taget the whole body using either animated fadeOut or animated hinge
+        //$("body").addClass("animate__animated animate__fadeOut")
+        $("body").addClass("animate__hinge")
+
+    });
+</script>
+</head>
+
+<body>
+    <!-- Code bellow this line should not be changed -->
+    <div class="container-fluid">
+        <h3 class="text-primary text-center animate__animated animate__bounce">jQuery Playground</h3>
+        <div class="row">
+        <div class="col-xs-6">
+            <h4>#left-well</h4>
+            <div class="well" id="left-well">
+                <button class="btn btn-default target" id="target1">target1</button>
+                <button class="btn btn-default target" id="target2">target2</button>
+                <button class="btn btn-default target" id="target3">target3</button>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <h4>#right-well</h4>
+            <div class="well" id="right-well">
+                <button class="btn btn-default target" id="target4">target4</button>
+                <button class="btn btn-default target " id="target5">target5</button>
+                <button class="btn btn-default target" id="target6">target6</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
